@@ -33,7 +33,7 @@ void suma_parcial(const vector<int>& datos, int inicio, int fin, long long& resu
     //  Particion y Comunicacion
     for (int i = 0; i < num_hilos; i++) {
         int inicio = i * bloque;
-        int fin = (i == num_hilos - 1) ? n : inicio + bloque; // Último hilo toma lo que sobra
+        int fin = (i == num_hilos - 1) ? n : inicio + bloque; 
         hilos.push_back(thread(suma_parcial, ref(datos), inicio, fin, ref(resultados[i])));
     }
 
